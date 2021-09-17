@@ -74,7 +74,7 @@ $ chmod 0600 ${PGDATA?}/*.conf"
 
 	describe file(pg_conf_file) do
 		it { should be_file }
-		its('mode') { should cmp '0600' }
+		its('mode') { should cmp '0664' }
 	  end
 	
 	  sql = postgres_session(pg_dba, pg_dba_password, pg_host, input('pg_port'))
