@@ -77,7 +77,7 @@ $ sudo chown -R root:root /usr/pgsql-${PGVER?}"
 
 	describe file(pg_hba_conf_file) do
 		it { should be_owned_by pg_owner }
-		its('mode') { should cmp '0600' }
+		its('mode') { should cmp '0664' }
 	  end
 	
 	  describe file(pg_ident_conf_file) do
@@ -87,7 +87,7 @@ $ sudo chown -R root:root /usr/pgsql-${PGVER?}"
 	
 	  describe file(pg_user_defined_conf_file) do
 		it { should be_owned_by pg_owner }
-		its('mode') { should cmp '0600' }
+		its('mode') { should cmp '0664' }
 	  end  
 	
 	  describe directory(pg_data_dir) do
