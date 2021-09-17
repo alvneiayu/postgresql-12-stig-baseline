@@ -105,14 +105,14 @@ describe directory(pg_log_dir) do
     it { should be_directory }
     it { should be_owned_by pg_owner }
     it { should be_grouped_into pg_owner }
-    its('mode') { should  cmp '0700' }
+    its('mode') { should  cmp '0775' }
   end
 
   describe directory(pg_audit_log_dir) do
     it { should be_directory }
     it { should be_owned_by pg_owner }
     it { should be_grouped_into pg_owner }
-    its('mode') { should  cmp '0700' }
+    its('mode') { should  cmp '0775' }
   end
 
   sql = postgres_session(pg_dba, pg_dba_password, pg_host, input('pg_port'))
@@ -122,8 +122,8 @@ describe directory(pg_log_dir) do
   end
 
   describe postgres_conf(pg_conf_file) do
-    its('log_directory') { should eq 'pg_log' }
-    its('log_file_mode') { should eq '0600' }
+    its('log_directory') { should eq '/opt/bitnami/postgresql/logs' }
+    its('log_file_mode') { should eq '0644' }
     its('client_min_messages') { should match /^error$/i }
   end
 
