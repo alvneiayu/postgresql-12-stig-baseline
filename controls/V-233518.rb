@@ -67,17 +67,17 @@ $ psql -c \"ALTER ROLE rolename WITH NOSUPERUSER\""
 
 	describe file(pg_conf_file) do
 		it { should be_owned_by pg_owner }
-		its('mode') { should cmp '0600' }
+		its('mode') { should cmp '0644' }
 	  end
 	
 	  describe file(pg_hba_conf_file) do
 		it { should be_owned_by pg_owner }
-		its('mode') { should cmp '0600' }
+		its('mode') { should cmp '0644' }
 	  end
 	
 	  describe file(pg_ident_conf_file) do
 		it { should be_owned_by pg_owner }
-		its('mode') { should cmp '0600' }
+		its('mode') { should cmp '0644' }
 	  end  
 	end
 
