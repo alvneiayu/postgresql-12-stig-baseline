@@ -119,7 +119,7 @@ $ chmod 0600 <log directory name>/*.log"
 	  it { should be_directory }
 	  it { should be_owned_by pg_owner }
 	  it { should be_grouped_into pg_owner }
-	  its('mode') { should  cmp '0700' }
+	  its('mode') { should  cmp '0775' }
 	end
   
 	describe command("find #{pg_log_dir} -type f -perm 600 ! -perm 600 | wc -l") do
