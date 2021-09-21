@@ -3,7 +3,7 @@ windows_runner: false
 pg_owner: ''
 pg_group: ''
 pg_owner_password: ''
-pg_dba: ''
+pg_dba: 'postgres'
 pg_dba_password: ''
 pg_user: ''
 pg_user_password: ''
@@ -13,20 +13,20 @@ pg_db: 'test_db'
 pg_table: 'test_table'
 login_user: ''
 login_host: ''
-pg_version: '12.5'
-pg_data_dir: "/opt/pgsql/data/"
-pg_log_dir: "/opt/pgsql/data/"
-pg_audit_log_dir: "/opt/pgsql/data/pg_log/"
-pg_conf_file: "/opt/pgsql/data/postgresql.conf"
-pg_user_defined_conf: "/opt/pgsql/data/stig-postgresql.conf"
-pg_hba_conf_file: "/opt/pgsql/data/pg_hba.conf"
-pg_ident_conf_file: "/opt/pgsql/data/pg_ident.conf"
+pg_version: '13.4'
+pg_data_dir: "/bitnami/postgresql/data/"
+pg_log_dir: "/opt/bitnami/postgresql/logs/"
+pg_audit_log_dir: "/opt/bitnami/postgresql/logs/"
+pg_conf_file: "/opt/bitnami/postgresql/conf/postgresql.conf"
+pg_user_defined_conf: "/opt/bitnami/postgresql/conf/postgresql.conf"
+pg_hba_conf_file: "/opt/bitnami/postgresql/conf/pg_hba.conf"
+pg_ident_conf_file: "/bitnami/postgresql/data/pg_ident.conf"
 pg_shared_dirs:
-  - "/usr/pgsql-12"
-  - "/usr/pgsql-12/bin"
-  - "/usr/pgsql-12/lib"
-  - "/usr/pgsql-12/share"
-pg_conf_mode: '0600'
+  - "/opt/bitnami/postgresql"
+  - "/opt/bitnami/postgresql/bin"
+  - "/opt/bitnami/postgresql/lib"
+  - "/opt/bitnami/postgresql/share"
+pg_conf_mode: '0644'
 pg_superusers:
   - 'postgres'
 pg_users:
